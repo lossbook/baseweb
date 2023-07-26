@@ -32,7 +32,7 @@ const NotificationCircle = ({
 
   if (__DEV__) {
     if (typeof contentProp === 'string') {
-      console.error(`[baseui] NotificationCircle child must be number or icon, found string`);
+      //console.error(`[baseui] NotificationCircle child must be number or icon, found string`);
     }
     if (placement && placement !== PLACEMENT.topLeft && placement !== PLACEMENT.topRight) {
       console.error(
