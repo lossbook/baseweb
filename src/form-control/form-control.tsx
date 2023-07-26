@@ -14,6 +14,7 @@ import {
   LabelContainer as StyledLabelContainer,
   Caption as StyledCaption,
   ControlContainer as StyledControlContainer,
+  Root as StyledRoot,
 } from './styled-components';
 import type { FormControlProps, FormControlState, StyleProps } from './types';
 
@@ -58,6 +59,8 @@ export default class FormControl extends React.Component<FormControlProps, FormC
         Caption: CaptionOverride,
         // @ts-ignore
         ControlContainer: ControlContainerOverride,
+        // @ts-ignore
+        Root: RootOverride,
       },
       label,
       caption,
@@ -83,6 +86,7 @@ export default class FormControl extends React.Component<FormControlProps, FormC
     const LabelContainer = getOverride(LabelContainerOverride) || StyledLabelContainer;
     const Caption = getOverride(CaptionOverride) || StyledCaption;
     const ControlContainer = getOverride(ControlContainerOverride) || StyledControlContainer;
+    const Root = getOverride(RootOverride) || StyledRoot;
 
     const hint = chooseRenderedHint(caption, error, positive, sharedProps);
 
@@ -139,7 +143,7 @@ export default class FormControl extends React.Component<FormControlProps, FormC
     }
 
     return (
-      <React.Fragment>
+      <Root {...sharedProps} {...getOverrideProps(RootOverride)}>
         {label && (
           <LabelContainer {...sharedProps} {...getOverrideProps(LabelContainerOverride)}>
             <Label
@@ -204,7 +208,7 @@ export default class FormControl extends React.Component<FormControlProps, FormC
             </ControlContainer>
           )}
         </UIDConsumer>
-      </React.Fragment>
+      </Root>
     );
   }
 }

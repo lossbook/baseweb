@@ -23,6 +23,8 @@ export type FormControlOverrides = {
   Caption?: Override;
   /** Customizes the container element. */
   ControlContainer?: Override;
+  /** Customizes the container element. */
+  Root?: Override;
 };
 export type FormControlProps = {
   overrides?: FormControlOverrides;

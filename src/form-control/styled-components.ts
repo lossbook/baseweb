@@ -94,3 +94,10 @@ export const ControlContainer = styled<'div', StyleProps>('div', (props) => {
   };
 });
 ControlContainer.displayName = 'ControlContainer';
+
+export const Root = styled<'div', StyleProps>('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+});
+Root.displayName = 'Root';
