@@ -157,7 +157,7 @@ export default function MobileMenu(props: AppNavBarProps) {
         anchor={ANCHOR.left}
         isOpen={isOpen}
         onClose={toggleMenu}
-        size={'75%'}
+        size={'250px'}
         {...drawerProps}
       >
         <MobileMenu
